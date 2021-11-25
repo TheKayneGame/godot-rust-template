@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.diagnostics.warningsAsHint": [
+        "macro-error"
+    ]
+}
