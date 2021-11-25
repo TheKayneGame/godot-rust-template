@@ -1,0 +1,4 @@
+Godot*.exe
+gdnative-lib/target/**
+*.dll
+.import/

@@ -1,0 +1,31 @@
+{
+    "configurations": [
+
+        {
+            "name": "(Windows) Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "preLaunchTask": "godot-rust: Build and Move Debug",
+            "program": "${workspaceFolder}/Godot_v3.4-stable_win64.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/godot-project",
+            "environment": [],
+            "externalConsole": false
+        },
+
+        {
+            "name": "Debug Game",
+            "preLaunchTask": "godot-rust: Build and Move Debug",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/Godot_v3.4-stable_win64.exe",
+            "cwd": "${workspaceFolder}/godot-project",
+            "presentation": {
+                "group": "Debug",
+                "order": 1
+            },
+            "sourceLanguages": ["rust"]
+        },
+    ]
+}

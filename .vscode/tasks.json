@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "godot-rust: Build and Move Debug",
+            "type": "shell",
+            "command": "echo Hello ",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "godot-rust: Build Debug",
+                "godot-rust: Copy debug ALL"
+            ]
+        },
+        {
+            "label": "godot-rust: Build Debug",
+            "detail": "build dll debug",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/gdnative-lib/"
+            },
+            //"command": "cargo build --target x86_64-pc-windows-msvc",
+            "command": "cargo build --target x86_64-pc-windows-msvc",
+            "group": "build"
+        },
+        {
+            "label": "godot-rust: Copy debug ALL",
+            "detail": "copy dll ",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "cp ./gdnative-lib/target/x86_64-pc-windows-msvc/debug/gdnative_lib.dll godot-project/lib/x86_64-pc-windows-msvc",
+            "group": "build"
+        },
+
+    ]
+}
